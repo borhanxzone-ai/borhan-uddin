@@ -8,7 +8,6 @@ import { VideoModal } from './components/VideoModal';
 import { ServicesSection } from './components/ServicesSection';
 import { ProcessSection } from './components/ProcessSection';
 import { ContactSection } from './components/ContactSection';
-import { EditGuideModal } from './components/EditGuideModal';
 import { Footer } from './components/Footer';
 import { projectsData, siteConfig } from './data/portfolioData';
 import { ProjectCategory, ProjectItem } from './types';
@@ -19,7 +18,6 @@ export default function App() {
   const [formatFilter, setFormatFilter] = useState<'all' | 'horizontal' | 'vertical'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [activeProject, setActiveProject] = useState<ProjectItem | null>(null);
-  const [isEditGuideOpen, setIsEditGuideOpen] = useState(false);
   const [selectedServiceForContact, setSelectedServiceForContact] = useState<string | undefined>(undefined);
 
   // Category counts
@@ -97,21 +95,8 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#090a0f] text-neutral-100 flex flex-col font-sans selection:bg-amber-400 selection:text-black">
       
-      {/* Top Banner Notice: Direct indicator for easy editing */}
-      <div className="bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-amber-500/20 border-b border-amber-500/30 py-2 px-4 text-center text-xs text-amber-200 flex items-center justify-center gap-2 flex-wrap">
-        <span className="font-semibold">✨ Sabrly Media Format Portfolio:</span>
-        <span>আপনি কি ইমেজ বা টেক্সট পরিবর্তন করতে চান?</span>
-        <button
-          type="button"
-          onClick={() => setIsEditGuideOpen(true)}
-          className="underline font-bold text-amber-300 hover:text-white cursor-pointer ml-1"
-        >
-          এখানে ক্লিক করে নির্দেশিকা দেখুন (View Edit Guide) &rarr;
-        </button>
-      </div>
-
       {/* Navigation Bar */}
-      <Navbar onOpenEditGuide={() => setIsEditGuideOpen(true)} />
+      <Navbar />
 
       {/* Hero Section */}
       <Hero
@@ -198,19 +183,13 @@ export default function App() {
       <ContactSection preselectedService={selectedServiceForContact} />
 
       {/* Footer */}
-      <Footer onOpenEditGuide={() => setIsEditGuideOpen(true)} />
+      <Footer />
 
       {/* Video Lightbox Modal */}
       <VideoModal
         project={activeProject}
         onClose={() => setActiveProject(null)}
         onBookCall={() => scrollToContact()}
-      />
-
-      {/* Interactive Editing Guide Modal (Requested by user) */}
-      <EditGuideModal
-        isOpen={isEditGuideOpen}
-        onClose={() => setIsEditGuideOpen(false)}
       />
 
     </div>

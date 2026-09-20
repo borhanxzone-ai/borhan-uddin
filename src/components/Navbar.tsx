@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Video, Sparkles, BookOpen, MessageSquare, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Video, Sparkles, MessageSquare, Menu, X, ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '../data/portfolioData';
 
 interface NavbarProps {
-  onOpenEditGuide: () => void;
+  onOpenEditGuide?: () => void;
   onOpenContactModal?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenEditGuide }) => {
+export const Navbar: React.FC<NavbarProps> = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -90,28 +90,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEditGuide }) => {
 
           {/* Action CTAs */}
           <div className="flex items-center gap-2.5">
-            {/* Bengali/English Edit Guide Button */}
-            <button
-              type="button"
-              id="open-edit-guide-btn"
-              onClick={onOpenEditGuide}
-              className="relative inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-amber-300 bg-amber-500/10 border border-amber-500/30 rounded-lg hover:bg-amber-500/20 transition-all cursor-pointer shadow-sm hover:border-amber-400"
-              title="Click to view instructions on changing text, images & videos"
-            >
-              <BookOpen className="w-3.5 h-3.5 text-amber-400" />
-              <span className="hidden sm:inline">কীভাবে এডিট করবেন</span>
-              <span className="sm:hidden">Edit Guide</span>
-              <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
-              </span>
-            </button>
-
             {/* Direct Hire / Quote button */}
             <a
               href="#contact"
               id="nav-hire-btn"
-              className="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-black bg-amber-400 hover:bg-amber-300 rounded-lg shadow-lg shadow-amber-400/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-black bg-amber-400 hover:bg-amber-300 rounded-lg shadow-lg shadow-amber-400/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>Book a Project</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -146,17 +129,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEditGuide }) => {
                 </a>
               ))}
               <div className="pt-2 border-t border-white/10 flex flex-col gap-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenEditGuide();
-                  }}
-                  className="w-full py-2.5 px-3 rounded-lg text-xs font-semibold text-amber-300 bg-amber-500/10 border border-amber-500/20 flex items-center justify-center gap-2"
-                >
-                  <BookOpen className="w-4 h-4" />
-                  <span>কীভাবে টেক্সট ও ছবি পরিবর্তন করবেন (গাইড)</span>
-                </button>
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}

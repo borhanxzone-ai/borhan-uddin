@@ -3,10 +3,10 @@ import { siteConfig } from '../data/portfolioData';
 import { Video, ArrowUp, Instagram, Youtube, Facebook } from 'lucide-react';
 
 interface FooterProps {
-  onOpenEditGuide: () => void;
+  onOpenEditGuide?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenEditGuide }) => {
+export const Footer: React.FC<FooterProps> = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -87,16 +87,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenEditGuide }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4 flex-wrap">
-            <p>© {new Date().getFullYear()} {siteConfig.agencyName}. All rights reserved.</p>
-            <button
-              type="button"
-              onClick={onOpenEditGuide}
-              className="text-amber-400 hover:underline cursor-pointer"
-            >
-              কন্টেন্ট পরিবর্তনের গাইড (How to edit)
-            </button>
-          </div>
+          <p>© {new Date().getFullYear()} {siteConfig.agencyName}. All rights reserved.</p>
 
           <button
             type="button"
