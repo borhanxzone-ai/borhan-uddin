@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Sparkles, MessageSquare, CheckCircle2, Video, Film, ArrowRight, ExternalLink, Facebook, Youtube, Instagram } from 'lucide-react';
+import { MapPin, Sparkles, MessageSquare, CheckCircle2, Video, Film, ArrowRight, ExternalLink, Facebook, Youtube, Instagram, Palette } from 'lucide-react';
 import { siteConfig } from '../data/portfolioData';
 
 interface BioSectionProps {
@@ -14,7 +14,7 @@ export const BioSection: React.FC<BioSectionProps> = ({ onContactClick }) => {
     photoUrl: "/borhan-dp.jpg",
     photoLink: "https://www.facebook.com/share/1BuYp4HLTY/",
     aboutText: "Specializing in direct-response video editing, retention-focused pacing, and creative motion graphics for ambitious brands and digital creators worldwide.",
-    skills: ["Premiere Pro", "After Effects", "DaVinci Resolve", "Motion Design", "Sound Design", "Color Grading"],
+    skills: ["Premiere Pro", "After Effects", "3D Camera", "Motion Design", "Sound Design", "Color Grading"],
     experienceYears: "4+ Years of Crafting Edits",
     openToWork: true
   };
@@ -165,6 +165,19 @@ export const BioSection: React.FC<BioSectionProps> = ({ onContactClick }) => {
                 >
                   <Instagram className="w-4 h-4 text-pink-400" />
                   <span>Instagram</span>
+                </a>
+              )}
+
+              {siteConfig.contact.socials.behance && (
+                <a
+                  href={siteConfig.contact.socials.behance}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600/15 hover:bg-blue-600/25 border border-blue-500/25 text-blue-300 text-xs sm:text-sm font-medium transition-colors"
+                  title="Behance Portfolio"
+                >
+                  <Palette className="w-4 h-4 text-blue-400" />
+                  <span>Behance</span>
                 </a>
               )}
             </div>

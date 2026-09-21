@@ -38,6 +38,7 @@ export interface ProjectItem {
   software: string[];
   year: string;
   featured?: boolean;
+  column?: 1 | 2 | 3;
 }
 
 export interface ServiceItem {

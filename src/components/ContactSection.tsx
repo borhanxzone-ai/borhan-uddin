@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { siteConfig } from '../data/portfolioData';
-import { Mail, MessageCircle, Send, Check, Copy, ExternalLink, Calendar, Sparkles, Facebook, Youtube, Instagram, Loader2, ArrowRight } from 'lucide-react';
+import { Mail, MessageCircle, Send, Check, Copy, ExternalLink, Calendar, Sparkles, Facebook, Youtube, Instagram, Palette, Loader2, ArrowRight } from 'lucide-react';
 
 interface ContactSectionProps {
   preselectedService?: string;
@@ -224,6 +224,30 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
                         <div className="text-[11px] text-neutral-400 font-medium">Instagram Profile</div>
                         <div className="text-sm font-bold text-white group-hover:text-pink-300 transition-colors font-mono">
                           @borhan_xyz
+                        </div>
+                      </div>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-white transition-colors" />
+                  </a>
+                )}
+
+                {/* Behance Portfolio Link */}
+                {siteConfig.contact.socials.behance && (
+                  <a
+                    href={siteConfig.contact.socials.behance}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-xl bg-[#12141f] hover:bg-[#161a29] border border-white/5 hover:border-blue-500/40 transition-all flex items-center justify-between gap-4 group"
+                    title="Click to visit Behance Portfolio"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-blue-500/10 group-hover:bg-blue-500/20 flex items-center justify-center text-blue-400 transition-colors">
+                        <Palette className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="text-[11px] text-neutral-400 font-medium">Behance Portfolio</div>
+                        <div className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors font-mono">
+                          @borhanuddin-2004
                         </div>
                       </div>
                     </div>

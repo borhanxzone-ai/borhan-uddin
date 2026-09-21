@@ -41,7 +41,7 @@ export const siteConfig: SiteConfig = {
     photoUrl: "/borhan-dp.jpg",
     photoLink: "https://www.facebook.com/share/1BuYp4HLTY/",
     aboutText: "Crafting high-retention video edits, viral pacing, and direct-response motion design that transform brand visions into captivating visual stories.",
-    skills: ["Premiere Pro", "After Effects", "DaVinci Resolve", "Motion Design", "Sound Design", "Color Grading"],
+    skills: ["Premiere Pro", "After Effects", "3D Camera", "Motion Design", "Sound Design", "Color Grading"],
     experienceYears: "4+ Years of Crafting Edits",
     openToWork: true
   },
@@ -59,17 +59,17 @@ export const siteConfig: SiteConfig = {
   // 🎬 শোরিল কনফিগারেশন (Featured Showreel Video & Headline)
   // এখানে আপনি আপনার MP4 বা YouTube Embed ভিডিওর লিংক সহজে পরিবর্তন করতে পারেন
   showreel: {
-    title: "Showreel",
+    title: "Showreels",
     badge: "FEATURED WORK",
-    subheadline: "A glimpse into our high-converting motion design, viral pacing, and direct-response visual storytelling.",
-    videoUrl: "https://www.youtube.com/embed/MGx7f66I2sI",
+    subheadline: "Borhan Uddin • Motion Designer & Video Editor Showreels",
+    videoUrl: "https://youtu.be/lvLHvxsWwk4",
     videoType: "youtube"
   },
 
   // যোগাযোগ তথ্য (Contact Details & Social Media Links)
   contact: {
-    email: "borohanxzone@gmail.com",
-    whatsapp: "+880 1811-263668",
+    email: "borhanxzone@gmail.com",
+    whatsapp: "+880 1301-339247",
     telegram: "https://t.me/borhanuddin",
     calendlyUrl: "https://calendly.com",
     location: "Dhaka, Bangladesh • Serving Worldwide",
@@ -77,6 +77,7 @@ export const siteConfig: SiteConfig = {
       facebook: "https://www.facebook.com/share/1BuYp4HLTY/",
       youtube: "https://www.youtube.com/@Borhan_Creation-e6n",
       instagram: "https://www.instagram.com/borhan_xyz/",
+      behance: "https://www.behance.net/borhanuddin-2004",
     }
   }
 };
@@ -85,7 +86,7 @@ export const siteConfig: SiteConfig = {
 // 🎬 ২. পোর্টফোলিও প্রজেক্টের তালিকা (PROJECTS DATA)
 // ==========================================
 export const projectsData: ProjectItem[] = [
-  // ==================== ROW 1 ====================
+  // ==================== COLUMN 1 (LEFT) - TOP ====================
   {
     id: "project-1",
     title: "SBMC Video - Commercial Motion",
@@ -97,6 +98,7 @@ export const projectsData: ProjectItem[] = [
     videoUrl: "https://www.youtube.com/embed/MGx7f66I2sI",
     videoType: "youtube",
     isVertical: false,
+    column: 1,
     duration: "1:24",
     stats: {
       views: "1.2M",
@@ -115,6 +117,39 @@ export const projectsData: ProjectItem[] = [
     year: "2024",
     featured: true
   },
+
+  // 🆕 নতুন ভিডিও ১: এসবিএমসি এবং ইউআই মোশন-এর মাঝখানের গ্যাপ ফিলাপ (Column 1)
+  {
+    id: "project-skills-job",
+    title: "How Many Skills We Need for Job & Business ?",
+    category: "commercials",
+    categoryLabel: "YouTube Video",
+    client: "Borhan Creation",
+    clientIndustry: "Career & Business / Educational",
+    thumbnail: "https://img.youtube.com/vi/9VF0NvIpje4/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/9VF0NvIpje4",
+    videoType: "youtube",
+    isVertical: false,
+    column: 1,
+    duration: "1:45",
+    stats: {
+      views: "1.1M",
+      retention: "74%"
+    },
+    tags: ["Career Video", "Motion Graphics", "Kinetic Typography", "Sound Design"],
+    description: "High-engagement educational & corporate motion edit exploring essential modern skillsets for career and business growth with clear visual pacing.",
+    challengeAndSolution: {
+      challenge: "Transforming career development concepts into visually compelling, hook-driven motion storytelling.",
+      solution: "Engineered clean kinetic typography, graphic callouts, and rhythmic visual pacing to maintain audience engagement.",
+      result: "Achieved over 1.1M views with high completion and positive community interaction."
+    },
+    deliverables: ["16:9 YouTube Master", "Motion Graphics Package", "Audio Cleanup"],
+    software: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
+    year: "2024",
+    featured: true
+  },
+
+  // ==================== COLUMN 2 (CENTER) - VIRAL REELS ====================
   {
     id: "project-2",
     title: "SKILL IS POWER - Viral Reel",
@@ -125,7 +160,8 @@ export const projectsData: ProjectItem[] = [
     thumbnail: "https://img.youtube.com/vi/NisDcFX2ui4/maxresdefault.jpg",
     videoUrl: "https://www.youtube.com/embed/NisDcFX2ui4",
     videoType: "youtube",
-    isVertical: true, // 9:16 রিলস ফরম্যাট (মাঝখানে থাকবে)
+    isVertical: true, // 9:16 রিলস ফরম্যাট (মাঝের কলামে থাকবে)
+    column: 2,
     duration: "0:45",
     stats: {
       views: "3.4M",
@@ -144,17 +180,20 @@ export const projectsData: ProjectItem[] = [
     year: "2024",
     featured: true
   },
+
+  // ==================== COLUMN 3 (RIGHT) - TOP ====================
   {
     id: "project-3",
-    title: "Nafees Sir Project - Educational Edit",
+    title: "Nafees Salim Sir Project - Educational Edit",
     category: "commercials",
     categoryLabel: "YouTube Video",
-    client: "Nafees Sir Project",
+    client: "Nafees Salim Sir Project",
     clientIndustry: "Education / Brand Storytelling",
     thumbnail: "https://img.youtube.com/vi/xNQKYBr9CPU/maxresdefault.jpg",
     videoUrl: "https://www.youtube.com/embed/xNQKYBr9CPU",
     videoType: "youtube",
     isVertical: false,
+    column: 3,
     duration: "2:10",
     stats: {
       views: "850K",
@@ -173,7 +212,38 @@ export const projectsData: ProjectItem[] = [
     featured: false
   },
 
-  // ==================== ROW 2 ====================
+  // 🆕 নতুন ভিডিও ২: নাফিস সেলিম স্যার প্রজেক্ট এবং ইউআই মোশন-এর মাঝখানের গ্যাপ ফিলাপ (Column 3)
+  {
+    id: "project-video-ai",
+    title: "Video with AI - Creative Motion",
+    category: "motion-ads",
+    categoryLabel: "YouTube Video",
+    client: "Borhan Creation",
+    clientIndustry: "AI & Motion Synthesis",
+    thumbnail: "https://img.youtube.com/vi/3FAXOAtFRhE/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/3FAXOAtFRhE",
+    videoType: "youtube",
+    isVertical: false,
+    column: 3,
+    duration: "1:12",
+    stats: {
+      views: "920K",
+      retention: "78%"
+    },
+    tags: ["AI Video", "Motion Ads", "Visual FX", "Direct Response"],
+    description: "Cutting-edge video creation harnessing generative AI visuals, dynamic camera movement, kinetic text, and atmospheric audio design.",
+    challengeAndSolution: {
+      challenge: "Synthesizing generative AI imagery into a unified, high-octane visual commercial format.",
+      solution: "Blended AI-generated assets with custom motion tracking, color harmonization, and custom sound design.",
+      result: "Delivered an impactful showcase video demonstrating next-level AI production capabilities."
+    },
+    deliverables: ["16:9 4K Master Video", "AI Visual Synthesis", "Sound Design"],
+    software: ["Premiere Pro", "After Effects", "AI Video Tools"],
+    year: "2024",
+    featured: true
+  },
+
+  // ==================== COLUMN 1 (LEFT) - MID ====================
   {
     id: "project-4",
     title: "UI MOTION - App & Dashboard Animation",
@@ -185,6 +255,7 @@ export const projectsData: ProjectItem[] = [
     videoUrl: "https://www.youtube.com/embed/OnJaaG1v_AM",
     videoType: "youtube",
     isVertical: false,
+    column: 1,
     duration: "0:58",
     stats: {
       views: "1.5M",
@@ -202,6 +273,8 @@ export const projectsData: ProjectItem[] = [
     year: "2024",
     featured: true
   },
+
+  // ==================== COLUMN 2 (CENTER) - REEL 2 ====================
   {
     id: "project-5",
     title: "AS-Sunnah Promo - Cinematic Short",
@@ -212,7 +285,8 @@ export const projectsData: ProjectItem[] = [
     thumbnail: "https://img.youtube.com/vi/JC0tiK7tT5g/maxresdefault.jpg",
     videoUrl: "https://www.youtube.com/embed/JC0tiK7tT5g",
     videoType: "youtube",
-    isVertical: true, // 9:16 রিলস ফরম্যাট (মাঝখানে থাকবে)
+    isVertical: true, // 9:16 রিলস ফরম্যাট (মাঝের কলামে থাকবে)
+    column: 2,
     duration: "0:50",
     stats: {
       views: "2.9M",
@@ -231,6 +305,8 @@ export const projectsData: ProjectItem[] = [
     year: "2024",
     featured: true
   },
+
+  // ==================== COLUMN 3 (RIGHT) - MID ====================
   {
     id: "project-6",
     title: "UI Motion - Interactive Product Showcase",
@@ -242,6 +318,7 @@ export const projectsData: ProjectItem[] = [
     videoUrl: "https://www.youtube.com/embed/Ar9oWO7rbnI",
     videoType: "youtube",
     isVertical: false,
+    column: 3,
     duration: "1:05",
     stats: {
       views: "980K",
@@ -260,7 +337,7 @@ export const projectsData: ProjectItem[] = [
     featured: false
   },
 
-  // ==================== ROW 3 ====================
+  // ==================== COLUMN 1 (LEFT) - BOTTOM ====================
   {
     id: "project-7",
     title: "Use of AI - Futuristic Motion Graphics",
@@ -272,6 +349,7 @@ export const projectsData: ProjectItem[] = [
     videoUrl: "https://www.youtube.com/embed/L6-Fa2PKV4U",
     videoType: "youtube",
     isVertical: false,
+    column: 1,
     duration: "1:15",
     stats: {
       views: "1.8M",
@@ -289,6 +367,39 @@ export const projectsData: ProjectItem[] = [
     year: "2024",
     featured: true
   },
+
+  // 🆕 নতুন রিলস ১: Use of AI এর নিচে রিলস সাইজের ভিডিও (Column 1)
+  {
+    id: "project-reel-motion-video",
+    title: "Motion Video - Visual Kinetic Reel",
+    category: "reels-shorts",
+    categoryLabel: "Reel / Short",
+    client: "Borhan Creation",
+    clientIndustry: "Visual Motion / Viral Reel",
+    thumbnail: "https://img.youtube.com/vi/ecAnNUslwJU/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/ecAnNUslwJU",
+    videoType: "youtube",
+    isVertical: true, // 9:16 রিলস সাইজ
+    column: 1,
+    duration: "0:30",
+    stats: {
+      views: "1.6M",
+      shares: "34K"
+    },
+    tags: ["Motion Video", "Kinetic Design", "Sound Design", "Viral Reel"],
+    description: "High-energy motion video short featuring dynamic motion design, kinetic transitions, and immersive soundscapes crafted for social virality.",
+    challengeAndSolution: {
+      challenge: "Captivating viewers within the first 2 seconds on mobile vertical feed.",
+      solution: "Engineered high-impact hook visuals, fluid camera motion, and synced sound effects.",
+      result: "Achieved viral engagement and high audience retention rate."
+    },
+    deliverables: ["9:16 High-Res Reel Master", "Social Media Cut"],
+    software: ["After Effects", "Premiere Pro", "DaVinci Resolve"],
+    year: "2024",
+    featured: true
+  },
+
+  // ==================== COLUMN 2 (CENTER) - REEL 3 ====================
   {
     id: "project-8",
     title: "Product Motion - 3D Commercial Short",
@@ -299,7 +410,8 @@ export const projectsData: ProjectItem[] = [
     thumbnail: "https://img.youtube.com/vi/qJlp6BbkDQU/maxresdefault.jpg",
     videoUrl: "https://www.youtube.com/embed/qJlp6BbkDQU",
     videoType: "youtube",
-    isVertical: true, // 9:16 রিলস ফরম্যাট (মাঝখানে থাকবে)
+    isVertical: true, // 9:16 রিলস ফরম্যাট (মাঝের কলামে থাকবে)
+    column: 2,
     duration: "0:40",
     stats: {
       views: "4.1M",
@@ -318,6 +430,8 @@ export const projectsData: ProjectItem[] = [
     year: "2024",
     featured: true
   },
+
+  // ==================== COLUMN 3 (RIGHT) - BOTTOM ====================
   {
     id: "project-9",
     title: "Borhan Creation - Master Edit Showcase",
@@ -329,6 +443,7 @@ export const projectsData: ProjectItem[] = [
     videoUrl: "https://www.youtube.com/embed/MGx7f66I2sI",
     videoType: "youtube",
     isVertical: false,
+    column: 3,
     duration: "1:24",
     stats: {
       views: "2.5M",
@@ -343,6 +458,37 @@ export const projectsData: ProjectItem[] = [
     },
     deliverables: ["16:9 Master Showreel", "Portfolio Cutdowns"],
     software: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
+    year: "2024",
+    featured: true
+  },
+
+  // 🆕 নতুন রিলস ২: Borhan Creation - Master Edit Showcase এর নিচে রিলস সাইজের ভিডিও (Column 3)
+  {
+    id: "project-reel-motion-graphics",
+    title: "Motion Graphics - Dynamic VFX Reel",
+    category: "reels-shorts",
+    categoryLabel: "Reel / Short",
+    client: "Borhan Creation",
+    clientIndustry: "Motion Graphics / Creative VFX",
+    thumbnail: "https://img.youtube.com/vi/ngoF0cXzMi8/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/ngoF0cXzMi8",
+    videoType: "youtube",
+    isVertical: true, // 9:16 রিলস সাইজ
+    column: 3,
+    duration: "0:35",
+    stats: {
+      views: "2.1M",
+      shares: "45K"
+    },
+    tags: ["Motion Graphics", "VFX Reel", "Visual Rhythm", "Direct Response"],
+    description: "Punchy vertical motion graphics showcase displaying advanced visual effects, smooth typography, and rhythmic pacing.",
+    challengeAndSolution: {
+      challenge: "Condensing complex motion graphics techniques into an electrifying short-form reel.",
+      solution: "Created snappy keyframe choreography, kinetic motion bursts, and tight sound-to-visual synchronization.",
+      result: "Earned strong viral performance with high replay and share volume."
+    },
+    deliverables: ["9:16 Vertical Master", "Shorts Optimization"],
+    software: ["After Effects", "Premiere Pro"],
     year: "2024",
     featured: true
   }

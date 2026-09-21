@@ -9,6 +9,8 @@ import { ServicesSection } from './components/ServicesSection';
 import { ProcessSection } from './components/ProcessSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
+import { GlowingCursor } from './components/GlowingCursor';
+import { BackgroundBackdrop } from './components/BackgroundBackdrop';
 import { projectsData, siteConfig } from './data/portfolioData';
 import { ProjectCategory, ProjectItem } from './types';
 import { Sparkles, Layers, ArrowRight, Video, Flame, Film } from 'lucide-react';
@@ -68,6 +70,30 @@ export default function App() {
     });
   }, [selectedCategory, formatFilter, searchQuery]);
 
+  const isFiltered = selectedCategory !== 'all' || formatFilter !== 'all' || Boolean(searchQuery.trim());
+
+  // 3-Column distribution for desktop masonry flow without artificial row gaps
+  const col1Projects = useMemo(() => {
+    if (isFiltered) {
+      return filteredProjects.filter((_, idx) => idx % 3 === 0);
+    }
+    return filteredProjects.filter((p) => (p.column ?? 1) === 1);
+  }, [filteredProjects, isFiltered]);
+
+  const col2Projects = useMemo(() => {
+    if (isFiltered) {
+      return filteredProjects.filter((_, idx) => idx % 3 === 1);
+    }
+    return filteredProjects.filter((p) => (p.column ?? 2) === 2);
+  }, [filteredProjects, isFiltered]);
+
+  const col3Projects = useMemo(() => {
+    if (isFiltered) {
+      return filteredProjects.filter((_, idx) => idx % 3 === 2);
+    }
+    return filteredProjects.filter((p) => (p.column ?? 3) === 3);
+  }, [filteredProjects, isFiltered]);
+
   const scrollToWorks = () => {
     const el = document.getElementById('works');
     if (el) {
@@ -93,8 +119,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#090a0f] text-neutral-100 flex flex-col font-sans selection:bg-amber-400 selection:text-black">
-      
+    <div className="min-h-screen relative text-neutral-100 flex flex-col font-sans selection:bg-amber-400 selection:text-black">
+      {/* Interactive Glowing Ellipse Follower (Mouse & Touch/Tap) */}
+      <GlowingCursor />
+
+      {/* Cinematic Custom Portrait Background */}
+      <BackgroundBackdrop />
+
       {/* Navigation Bar */}
       <Navbar />
 
@@ -139,15 +170,54 @@ export default function App() {
 
         {/* Works Grid */}
         {filteredProjects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-start">
-            {filteredProjects.map((project) => (
-              <WorkCard
-                key={project.id}
-                project={project}
-                onOpenModal={setActiveProject}
-              />
-            ))}
-          </div>
+          <>
+            {/* Desktop 3-Column Masonry Flow (No empty vertical gaps) */}
+            <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8 items-start">
+              {/* Column 1 (Left) */}
+              <div className="flex flex-col gap-6 sm:gap-8">
+                {col1Projects.map((project) => (
+                  <WorkCard
+                    key={project.id}
+                    project={project}
+                    onOpenModal={setActiveProject}
+                  />
+                ))}
+              </div>
+
+              {/* Column 2 (Center - Viral Reels) */}
+              <div className="flex flex-col gap-6 sm:gap-8">
+                {col2Projects.map((project) => (
+                  <WorkCard
+                    key={project.id}
+                    project={project}
+                    onOpenModal={setActiveProject}
+                  />
+                ))}
+              </div>
+
+              {/* Column 3 (Right) */}
+              <div className="flex flex-col gap-6 sm:gap-8">
+                {col3Projects.map((project) => (
+                  <WorkCard
+                    key={project.id}
+                    project={project}
+                    onOpenModal={setActiveProject}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Single Column Flow */}
+            <div className="flex md:hidden flex-col gap-6">
+              {filteredProjects.map((project) => (
+                <WorkCard
+                  key={project.id}
+                  project={project}
+                  onOpenModal={setActiveProject}
+                />
+              ))}
+            </div>
+          </>
         ) : (
           <div className="py-20 text-center rounded-3xl bg-[#11131c] border border-white/5 max-w-xl mx-auto p-8">
             <Layers className="w-12 h-12 text-neutral-500 mx-auto mb-4" />

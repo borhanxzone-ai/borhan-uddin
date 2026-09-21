@@ -20,14 +20,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
   const [isYtActive, setIsYtActive] = useState(false);
 
   const showreel = siteConfig.showreel || {
-    title: "Showreel",
+    title: "Showreels",
     badge: "FEATURED WORK",
-    subheadline: "A glimpse into our high-converting motion design, viral pacing, and direct-response visual storytelling.",
-    videoUrl: "https://www.youtube.com/embed/MGx7f66I2sI",
+    subheadline: "Borhan Uddin • Motion Designer & Video Editor Showreels",
+    videoUrl: "https://youtu.be/lvLHvxsWwk4",
     videoType: "youtube" as const
   };
 
-  const ytId = getYouTubeId(showreel.videoUrl) || 'MGx7f66I2sI';
+  const ytId = getYouTubeId(showreel.videoUrl) || 'lvLHvxsWwk4';
   const isYouTube = showreel.videoType === 'youtube' || Boolean(ytId);
 
   const togglePlay = () => {
@@ -60,6 +60,9 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
   const handleStartShowreel = () => {
     if (isYouTube) {
       setIsYtActive(true);
+    } else if (videoRef.current) {
+      videoRef.current.play().catch(() => {});
+      setIsPlaying(true);
     }
     const el = document.getElementById('showreel-player');
     if (el) {
@@ -256,7 +259,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
                       ) : (
                         <>
                           <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
-                          <span className="hidden sm:inline text-xs text-neutral-300">Muted</span>
+                          <span className="hidden sm:inline text-xs text-neutral-300">Mute</span>
                         </>
                       )}
                     </button>

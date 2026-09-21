@@ -1,6 +1,6 @@
 import React from 'react';
 import { siteConfig } from '../data/portfolioData';
-import { Video, ArrowUp, Instagram, Youtube, Facebook } from 'lucide-react';
+import { Video, ArrowUp, Instagram, Youtube, Facebook, Palette } from 'lucide-react';
 
 interface FooterProps {
   onOpenEditGuide?: () => void;
@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = () => {
   };
 
   return (
-    <footer className="bg-[#07080d] border-t border-white/5 py-12 md:py-16 text-neutral-400 text-xs">
+    <footer className="bg-[#07080d]/85 backdrop-blur-md border-t border-white/5 py-12 md:py-16 text-neutral-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-white/5">
@@ -79,6 +79,18 @@ export const Footer: React.FC<FooterProps> = () => {
                 title="Instagram Profile (@borhan_xyz)"
               >
                 <Instagram className="w-4 h-4" />
+              </a>
+            )}
+            {siteConfig.contact.socials.behance && (
+              <a
+                href={siteConfig.contact.socials.behance}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-xl bg-white/5 hover:bg-blue-600/20 border border-white/10 hover:border-blue-500/40 flex items-center justify-center text-neutral-300 hover:text-blue-400 transition-colors"
+                aria-label="Behance"
+                title="Behance Portfolio (@borhanuddin-2004)"
+              >
+                <Palette className="w-4 h-4" />
               </a>
             )}
           </div>
