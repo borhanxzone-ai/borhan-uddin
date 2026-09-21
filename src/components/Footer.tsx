@@ -20,14 +20,14 @@ export const Footer: React.FC<FooterProps> = () => {
           {/* Logo & Slogan */}
           <div className="space-y-2 max-w-sm">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 via-purple-500 to-rose-500 p-0.5 flex items-center justify-center shadow-md">
-                <div className="w-full h-full bg-[#0d0e15] rounded-[9px] overflow-hidden flex items-center justify-center">
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-amber-400 via-purple-500 to-rose-500 p-0.5 flex items-center justify-center shadow-md">
+                <div className="w-full h-full bg-[#0d0e15] rounded-full overflow-hidden flex items-center justify-center">
                   {siteConfig.avatarUrl ? (
                     <img
-                      src={siteConfig.avatarUrl}
+                      src="/favicon-512x512.png"
                       alt={siteConfig.agencyName}
                       referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover object-center"
                     />
                   ) : (
                     <Video className="w-4 h-4 text-amber-400" />

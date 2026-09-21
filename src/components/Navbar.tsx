@@ -45,14 +45,14 @@ export const Navbar: React.FC<NavbarProps> = () => {
             id="brand-logo-link"
             className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-amber-400 via-purple-500 to-rose-500 p-0.5 shadow-lg shadow-purple-500/20 group-hover:scale-105 transition-transform duration-200">
-              <div className="w-full h-full bg-[#0d0e15] rounded-[10px] overflow-hidden flex items-center justify-center">
+            <div className="relative w-11 h-11 rounded-full bg-gradient-to-br from-amber-400 via-purple-500 to-rose-500 p-0.5 shadow-lg shadow-purple-500/20 group-hover:scale-105 transition-transform duration-200">
+              <div className="w-full h-full bg-[#0d0e15] rounded-full overflow-hidden flex items-center justify-center">
                 {siteConfig.avatarUrl ? (
                   <img
-                    src={siteConfig.avatarUrl}
+                    src="/favicon-512x512.png"
                     alt={siteConfig.agencyName}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-center"
                   />
                 ) : (
                   <Video className="w-5 h-5 text-amber-400" />
